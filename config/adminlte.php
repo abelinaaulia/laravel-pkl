@@ -244,21 +244,36 @@ return [
 
         ['header' => 'Dashboard'],
 
-      [
-          'text' => 'buku',
-          'url' => 'admin/buku',
-          'icon' => 'far fa-fw fa-file'
-      ],
-      [
-        'text' => 'pengarang',
-        'url' => 'admin/pengarang',
-        'icon' => 'far fa-fw fa-file'
-    ],
-    [
-        'text' => 'menu lainnya',
-        'url' => '#',
-        'icon' => 'far fa-fw fa-file'
-    ],
+        [
+            'text' => 'Fitur Inventaris',
+            'url' => 'admin/fitur inventaris',
+            'icon' => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Barang',
+                    'url' => 'admin/barang',
+                    'icon' => 'far fa-fw fa-file',
+                ],
+
+                [
+                    'text' => 'Barang Masuk',
+                    'url' => 'admin/barang masuk',
+                    'icon' => 'far fa-fw fa-file'
+                ],
+
+                 [
+                    'text' => 'Barang Keluar',
+                    'url' => 'admin/barang keluar',
+                    'icon' => 'far fa-fw fa-file'
+                ],
+
+                [
+                    'text' => 'Peminjaman',
+                    'url' => 'admin/peminjaman',
+                    'icon' => 'far fa-fw fa-file'
+                ],
+            ],
+        ],
     ],
 
     /*
