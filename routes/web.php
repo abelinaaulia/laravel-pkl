@@ -17,9 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes([
-    'register' => true
-]);
 
 //hanya untuk role admin
 //Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function(){
