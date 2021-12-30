@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Barang;
 use App\Models\Barang_Masuk;
 use Illuminate\Http\Request;
 
-class BarangController extends Controller
+class BarangMasukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +18,8 @@ class BarangController extends Controller
     }
     public function index()
     {
-        $barang = Barang::get();
-        return view('barang.index', compact('barang'));
+        $barang_masuk = Barang_Masuk::with('barang')->get();
+        return view('barang_masuk.index', compact('barang_masuk'));
     }
 
     /**
@@ -30,7 +29,8 @@ class BarangController extends Controller
      */
     public function create()
     {
-        return view('barang.create');
+        $barang = Barang::all();
+        return view('barang_masuk.create', compact('barang'));
     }
 
     /**
@@ -41,18 +41,21 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
+            'id_barang' => 'required',
             'nama_barang' => 'required',
-            'stok' => 'required',
-            'kondisi' => 'required',
+            'jumlah' => 'required',
+            'tgl_masuk' => 'required',
+
         ]);
 
-        $barang = new Barang;
-        $barang->nama_barang = $request->nama_barang;
-        $barang->stok = $request->stok;
-        $barang->kondisi = $request->kondisi;
-        $barang->save();
-        return redirect()->route('barang.index');
+        $barang_masuk = new Barang_Masuk;
+        $barang_masuk->id_barang = $request->id_barang;
+        $barang_masuk->nama_barang = $request->nama_barang;
+        $barang_masuk->jumlah = $request->jumlah;
+        $barang_masuk->tgl_masuk = $request->tgl_masuk;
+        $barang_masuk->save();
+        return redirect()->route('barang_masuk.index');
     }
 
     /**
@@ -63,8 +66,8 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        $barang = Barang::findOrFail($id);
-        return view('barang.show', compact('barang'));
+        $barang_masuk = Barang_Masuk::findOrFail($id);
+        return view('barang_masuk.show', compact('barang_masuk'));
     }
 
     /**
@@ -75,8 +78,9 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        $barang = Barang::findOrFail($id);
-        return view('barang.edit', compact('barang'));
+        $barang_masuk = Barang_masuk::findOrFail($id);
+        $barang= Barang::all();
+        return view('barang_masuk.edit', compact('barang_masuk', 'barang'));
     }
 
     /**
@@ -88,18 +92,21 @@ class BarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
+        $request->validate([
+            'id_barang' => 'required',
             'nama_barang' => 'required',
-            'stok' => 'required',
-            'kondisi' => 'required',
+            'jumlah' => 'required',
+            'tgl_masuk' => 'required',
+
         ]);
 
-        $barang = Barang::findOrFail($id);
-        $barang->nama_barang = $request->nama_barang;
-        $barang->stok = $request->stok;
-        $barang->kondisi = $request->kondisi;
-        $barang->save();
-        return redirect()->route('barang.index');
+        $barang_masuk = new Barang_Masuk;
+        $barang_masuk->id_barang = $request->id_barang;
+        $barang_masuk->nama_barang = $request->nama_barang;
+        $barang_masuk->jumlah = $request->jumlah;
+        $barang_masuk->tgl_masuk = $request->tgl_masuk;
+        $barang_masuk->save();
+        return redirect()->route('barang_masuk.index');
     }
 
     /**
@@ -110,8 +117,8 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        $barang = Barang::findOrFail($id);
-        $barang->delete();
-        return redirect()->route('barang.index');
+        $barang_masuk = Barang_Masuk::findOrFail($id);
+        $barang_masuk->delete();
+        return redirect()->route('barang_masuk.index');
     }
 }

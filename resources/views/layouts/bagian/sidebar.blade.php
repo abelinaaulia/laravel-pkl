@@ -16,19 +16,19 @@
                 <a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Barang</a>
+                <a href="#"><i class="fas fa-sd-card"></i>Data Barang</a>
 
             <li>
-                <a href="tables.html"><i class="fa fa-table fa-fw"></i>Barang Masuk</a>
+                <a href="tables.html"><i class="fas fa-sd-card"></i>Data Barang Masuk</a>
             </li>
             <li>
-                <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Barang Keluar</a>
+                <a href="forms.html"><i class="fas fa-sd-card"></i>Data Barang Keluar</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i>Peminjaman</a>
+                <a href="#"><i class="fas fa-edit"></i>Peminjaman</a>
 
             <li>
-                <a href="#"><i class="fa fa-sitemap fa-fw"></i>Pengembalian</a>
+                <a href="#"><i class="fas fa-undo-alt"></i>Pengembalian</a>
 
             <li>
                 <a href="#"><i class="fa fa-files-o fa-fw"></i>Laporan Peminjaman</a>
