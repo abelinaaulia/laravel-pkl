@@ -56,11 +56,11 @@
 
     <!-- /.col-lg-12 -->
     {{-- TABLE --}}
-    <div id="page-wrapper">
+    <<div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Data Barang Masuk</h1>
+                    <h1 class="page-header">Barang Masuk</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -69,25 +69,25 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Tambah Barang Masuk
+                            Show Data Barang Masuk
                         </div>
-                        <form Action="{{ route('barang_masuk.store') }}" method="post">
+                        <form Action="" method="post">
                             @csrf
+                            @method('put')
                             <div class="panel-body">
                                 <label>Nama Barang</label>
-                                <input type="text" class="form-control" name="nama_barang">
+                                <input type="text" class="form-control" name="nama_barang"
+                                    value="{{ $barang_masuk->nama_barang }}" disabled>
                             </div>
                             <div class="panel-body">
                                 <label>Jumlah</label>
-                                <input type="number" class="form-control" name="jumlah">
+                                <input type="number" class="form-control" name="jumlah"
+                                    value="{{ $barang_masuk->jumlah }}" disabled>
                             </div>
                             <div class="panel-body">
                                 <label>Tanggal Masuk</label>
-                                <input type="date" class="form-control" name="tgl_masuk">
-                            </div>
-                            <div class="panel-body">
-                                <button type="reset" class="btn btn-warning">Reset</button>
-                                <button type="submit" class="btn btn-primary">Tambah</button>
+                                <input type="date" class="form-control" name="tgl_masuk"
+                                    value="{{ $barang_masuk->tgl_masuk }}" disabled>
                             </div>
                         </form>
                     </div>
@@ -96,42 +96,42 @@
             <!-- /.table-responsive -->
         </div>
         <!-- /.panel-body -->
-    </div>
-    <!-- /.panel -->
-    </div>
-    {{-- /TABLE --}}
-    <!-- /.row -->
-    <!-- /.panel-footer -->
-    </div>
-    <!-- /.panel .chat-panel -->
-    </div>
-    <!-- /.col-lg-4 -->
-    </div>
-    <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-    </div>
-    <!-- /#page-wrapper -->
+        </div>
+        <!-- /.panel -->
+        </div>
+        {{-- /TABLE --}}
+        <!-- /.row -->
+        <!-- /.panel-footer -->
+        </div>
+        <!-- /.panel .chat-panel -->
+        </div>
+        <!-- /.col-lg-4 -->
+        </div>
+        <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+        </div>
+        <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="{{ asset('backend/js/jquery.min.js') }}"></script>
+        <!-- jQuery -->
+        <script src="{{ asset('backend/js/jquery.min.js') }}"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{ asset('backend/js/metisMenu.min.js') }}"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="{{ asset('backend/js/metisMenu.min.js') }}"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="{{ asset('backend/js/raphael.min.js') }}"></script>
-    <script src="{{ asset('backend/js/morris.min.js') }}"></script>
-    <script src="{{ asset('backend/js/morris-data.js') }}"></script>
+        <!-- Morris Charts JavaScript -->
+        <script src="{{ asset('backend/js/raphael.min.js') }}"></script>
+        <script src="{{ asset('backend/js/morris.min.js') }}"></script>
+        <script src="{{ asset('backend/js/morris-data.js') }}"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="{{ asset('backend/js/startmin.js') }}"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="{{ asset('backend/js/startmin.js') }}"></script>
 
 </body>
 

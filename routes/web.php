@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\Barang_KeluarController;
-use App\Http\Controllers\PeeminjamanController;
+use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\Laporan_PeminjamanController;
 
@@ -26,9 +26,8 @@ Route::get('/', function () {
 
 Auth::routes(
     [
-        'register' => true
-    ]
-    );
+        'register' => true,
+    ]);
 
 //hanya untuk role admin
 //Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function(){
